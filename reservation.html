@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Galada&family=Special+Elite&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="img/saturne.png">
+  <title>Réservation</title>
+</head>
+
+<body>
+  <header>
+    <!-- Barre de navigation -->
+    <div class="navbar">
+      <!-- Logo de la page d'accueil -->
+      <div>
+        <a href="index.html" class="logo"><img src="img/logo.png" alt="Logo" /></a>
+      </div>
+
+      <!-- Hamburger -->
+      <div class="hamburger-menu">
+        <div class="hamburger-icon">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </div>
+      <!-- Liens vers les autres pages -->
+      <div class="navbar-links">
+        <a href="index.html">Accueil</a>
+        <a href="reservation.html" class="turn-off">Réservation</a>
+        <a href="restaurant.html">Restaurant</a>
+        <a href="macommande.html" class="macommande">Ma commande</a>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <main>
+
+      <h1 class="title">Réservation</h1>
+      <!-- Form pour la reservation -->
+      <div class="carte-form">
+        <fieldset class="background-form">
+          <form action="confirmation.html" method="POST">
+            <div class="form-flex">
+              <fieldset class="background-fieldset">
+                <h2>Informations</h2>
+                <div class="infos">
+                  <label for="prenom">Prénom :</label>
+                  <input class="inputs" type="text" id="prenom" name="prenom" required>
+                  <p>*</p>
+                </div>
+                <div class="infos">
+                  <label for="nom">Nom :</label>
+                  <input class="inputs" type="text" id="nom" name="nom" required>
+                  <p>*</p>
+                </div>
+                <div class="infos">
+                  <label for="telephone">Téléphone :</label>
+                  <input class="inputs" type="tel" pattern="[0-9]{10}" id="telephone" name="telephone" required>
+                  <p>*</p>
+                </div>
+                <div class="infos">
+                  <label for="nb_personnes">Nombre de personnes :</label>
+                  <input class="inputs" type="number" id="nb_personnes" name="nb_personnes" min="1" required>
+                  <p>*</p>
+                </div>
+                <div class="infos">
+                  <label for="date">Date de réservation :</label>
+                  <input class="inputs" type="date" id="date" name="date" required>
+                  <p>*</p>
+                </div>
+                <div class="infos">
+                  <label for="lieu">Lieu :</label>
+                  <select class="inputs" id="lieu" name="lieu" required>
+                    <option value="">Ou</option>
+                    <option value="salle">Salle à manger</option>
+                    <option value="terrasse">Terrasse</option>
+                  </select>
+                  <p>*</p>
+                </div>
+                <div class="infos">
+                  <label for="heure">Heure :</label>
+                  <select class="inputs" id="heure" name="heure" required>
+                    <option value="">Heure</option>
+                    <option value="12:00">12:00</option>
+                    <option value="12:30">12:30</option>
+                    <option value="13:00">13:00</option>
+                    <option value="13:30">13:30</option>
+                    <option value="17:00">17:00</option>
+                    <option value="17:30">17:30</option>
+                    <option value="18:00">18:00</option>
+                    <option value="18:30">18:30</option>
+                    <option value="19:00">19:00</option>
+                    <option value="19:30">19:30</option>
+                    <option value="20:00">20:00</option>
+                    <option value="20:30">20:30</option>
+                    <option value="21:00">21:00</option>
+                  </select>
+                  <p>*</p>
+                </div>
+              </fieldset>
+
+              <fieldset class="background-fieldset">
+                <h3>Complémentaires</h3>
+                <div>
+                  <label for="commentaire">Commentaire :</label>
+                  <textarea class="inputs" id="commentaire" name="commentaire"></textarea>
+                </div>
+                <div>
+                  <label for="courriel">Courriel :</label>
+                  <input class="inputs" placeholder="test@mail.com" type="email" id="courriel" name="courriel">
+                </div>
+                <div>
+                  <label for="infolettre">S'inscrire à l'infolettre :</label>
+                  <input type="checkbox" id="infolettre" name="infolettre" checked>
+                </div>
+              </fieldset>
+            </div>
+            <button type="submit">Envoyer</button>
+          </form>
+        </fieldset>
+      </div>
+    </main>
+  </div>
+  <!-- Footer réalisé par et socials -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-up">
+        <p>Réalisé par : Adrien Thomas</p>
+        <div class="reseaux">
+          <p>Réseaux sociaux :</p>
+          <a href="https://gitlab.com/adrienthomas419" target="_blank" class="gitlab">
+            <img src="img/gitlab.png" alt="GitLab" /></a>
+        </div>
+      </div>
+      <div class="footer-down">
+        <p>Intégration web 1</p>
+        <div class="cégep">
+          <p>Cégep de trois-Rivières</p>
+          <p>Hiver 2023</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

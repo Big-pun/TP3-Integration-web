@@ -1,0 +1,935 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Style pour la barre de navigation */
+.navbar {
+  overflow: hidden;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #3a0734;
+}
+
+/* Style pour les liens dans la barre de navigation */
+.navbar a {
+  float: left;
+  display: block;
+  color: #f8f6f5;
+  /* Couleur du texte */
+  text-align: center;
+  padding: 14px 20px;
+  /* Espacement autour du texte */
+  text-decoration: none;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  font-family: "Galada", cursive;
+}
+
+/* Styles pour le hamburger menu */
+.hamburger-menu {
+  display: none;
+  /* Par défaut caché */
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px;
+}
+
+/* Media query pour la taille d'écran > 961px pour le hamburger*/
+@media screen and (max-width: 960px) {
+  .navbar-links {
+    display: none;
+    /* Caché par défaut */
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #3a0734;
+    width: 100%;
+    padding: 20px 0;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+
+  .navbar {
+    justify-content: center;
+  }
+}
+
+/* Change la couleur du texte lorsque survolé */
+.navbar a:hover {
+  /* Couleur de fond lors du survol */
+  background-color: #f8f6f5;
+  color: #3a0734;
+}
+
+.navbar .turn-off:hover {
+  color: #f8f6f5;
+  cursor: default;
+  background-color: #3a0734;
+}
+
+.navbar .turn-off {
+  text-decoration: underline;
+}
+
+.navbar a.turn-off:hover {
+  transform: none;
+}
+
+.navbar a.logo:hover {
+  background-color: #3a0734;
+}
+
+.navbar a.macommande {
+  background-color: #f8f6f5;
+  color: #3a0734;
+  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56),
+    0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar a.macommande:hover {
+  background-color: #f8f6f5;
+  color: #3a0734;
+  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56),
+    0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+  transform: scale(1.2, 1.2);
+}
+
+/* Style pour le logo */
+.navbar img {
+  width: fit-content;
+  max-width: 200px;
+  /* Taille du logo */
+}
+
+/* footer et socials */
+
+footer {
+  background-color: #3a0734;
+  color: #f8f6f5;
+  border-radius: 1rem;
+  padding: 1rem;
+  font-family: "Special Elite", sans-serif;
+}
+
+.footer-up {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-down {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cégep {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}
+
+footer p {
+  font-weight: bold;
+  margin: 1rem;
+}
+
+.reseaux{
+  display: flex;
+  align-items: center;
+}
+
+.reseaux img{
+  max-width: 2rem;
+}
+
+/* CSS commun */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+body {
+  background-color: #3b2959;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 28' width='56' height='28'%3E%3Cpath fill='%23fdeff9' fill-opacity='0.1' d='M56 26v2h-7.75c2.3-1.27 4.94-2 7.75-2zm-26 2a2 2 0 1 0-4 0h-4.09A25.98 25.98 0 0 0 0 16v-2c.67 0 1.34.02 2 .07V14a2 2 0 0 0-2-2v-2a4 4 0 0 1 3.98 3.6 28.09 28.09 0 0 1 2.8-3.86A8 8 0 0 0 0 6V4a9.99 9.99 0 0 1 8.17 4.23c.94-.95 1.96-1.83 3.03-2.63A13.98 13.98 0 0 0 0 0h7.75c2 1.1 3.73 2.63 5.1 4.45 1.12-.72 2.3-1.37 3.53-1.93A20.1 20.1 0 0 0 14.28 0h2.7c.45.56.88 1.14 1.29 1.74 1.3-.48 2.63-.87 4-1.15-.11-.2-.23-.4-.36-.59H26v.07a28.4 28.4 0 0 1 4 0V0h4.09l-.37.59c1.38.28 2.72.67 4.01 1.15.4-.6.84-1.18 1.3-1.74h2.69a20.1 20.1 0 0 0-2.1 2.52c1.23.56 2.41 1.2 3.54 1.93A16.08 16.08 0 0 1 48.25 0H56c-4.58 0-8.65 2.2-11.2 5.6 1.07.8 2.09 1.68 3.03 2.63A9.99 9.99 0 0 1 56 4v2a8 8 0 0 0-6.77 3.74c1.03 1.2 1.97 2.5 2.79 3.86A4 4 0 0 1 56 10v2a2 2 0 0 0-2 2.07 28.4 28.4 0 0 1 2-.07v2c-9.2 0-17.3 4.78-21.91 12H30zM7.75 28H0v-2c2.81 0 5.46.73 7.75 2zM56 20v2c-5.6 0-10.65 2.3-14.28 6h-2.7c4.04-4.89 10.15-8 16.98-8zm-39.03 8h-2.69C10.65 24.3 5.6 22 0 22v-2c6.83 0 12.94 3.11 16.97 8zm15.01-.4a28.09 28.09 0 0 1 2.8-3.86 8 8 0 0 0-13.55 0c1.03 1.2 1.97 2.5 2.79 3.86a4 4 0 0 1 7.96 0zm14.29-11.86c1.3-.48 2.63-.87 4-1.15a25.99 25.99 0 0 0-44.55 0c1.38.28 2.72.67 4.01 1.15a21.98 21.98 0 0 1 36.54 0zm-5.43 2.71c1.13-.72 2.3-1.37 3.54-1.93a19.98 19.98 0 0 0-32.76 0c1.23.56 2.41 1.2 3.54 1.93a15.98 15.98 0 0 1 25.68 0zm-4.67 3.78c.94-.95 1.96-1.83 3.03-2.63a13.98 13.98 0 0 0-22.4 0c1.07.8 2.09 1.68 3.03 2.63a9.99 9.99 0 0 1 16.34 0z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+/* Css pour la page index */
+
+.background-white {
+  background-color: #f8f6f5;
+}
+
+.presentation {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  max-width: 100%;
+}
+
+.txt-portes {
+  color: #f8f6f5;
+  background-color: #957ab3;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56),
+    0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+  max-width: 65ch;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  text-align: center;
+}
+
+.txt-portes h1,
+.txt-portes a {
+  font-family: "Galada", cursive;
+}
+
+.txt-portes p {
+  font-family: "Special Elite", sans-serif;
+}
+
+.img-portes img {
+  max-width: 570px;
+  border-radius: 1rem;
+  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56),
+    0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+.liens {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.lien {
+  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56),
+    0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  border-radius: 1rem;
+  text-decoration: none;
+}
+
+.commander {
+  background-color: #f8f6f5;
+  color: #957ab3;
+}
+
+.liens .reserver:hover,
+.liens .commander:hover {
+  transform: scale(1.2);
+}
+
+.reserver {
+  background-color: transparent;
+  color: #f8f6f5;
+}
+
+/* css pour le menu */
+.title-menu {
+  color: #3b2959;
+  font-family: "Galada", cursive;
+  background-color: #f8f6f5;
+  padding: 1rem;
+  border-radius: 1rem;
+  max-width: 30%;
+  text-align: center;
+  margin-top: 5rem;
+  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56),
+    0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+.menu-carte {
+  background-color: #a96ba5;
+  border-radius: 1rem;
+  padding: 1rem;
+  padding-top: 0rem;
+  max-width: fit-content;
+  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56),
+    0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+  margin-bottom: 5rem;
+  margin-top: 10rem;
+}
+
+.menu {
+  background-color: #f8f6f5;
+  color: #3b2959;
+  font-family: "Special Elite", sans-serif;
+  text-align: center;
+  max-width: 65ch;
+  padding: 2rem;
+  border-radius: 1rem;
+  margin: 5rem auto 0;
+  position: relative;
+  top: -3rem;
+  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56),
+    0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+  color: #3a0734;
+  font-style: italic;
+}
+
+.menu h1 {
+  margin: 3rem auto;
+}
+
+.tasting-menu {
+  margin-top: 2rem;
+}
+
+.concept {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.menu-flex {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.concept-flex {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: flex-start;
+}
+
+.allergies-flex {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.menu h2,
+.menu h3,
+.menu h4,
+.menu h5 {
+  color: #3a0734;
+  font-weight: bold;
+  font-style: normal;
+}
+
+.menu h2 {
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  font-family: "Galada", cursive;
+}
+
+.price {
+  color: #957ab3;
+}
+
+.menu .allergies p,
+.menu .concept-txt {
+  margin: 0 auto;
+  color: #957ab3;
+}
+
+/* témoignages */
+.témoignages {
+  margin-bottom: 5rem;
+}
+
+.txt-témoignages {
+  background-color: #f8f6f5;
+  padding: 1rem;
+  border-radius: 1rem;
+  color: #3b2959;
+  text-align: center;
+  margin-top: 3rem;
+  max-width: 30%;
+  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56),
+    0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+.txt-témoignages h2 {
+  font-family: "Galada", cursive;
+}
+
+.txt-témoignages h3 {
+  font-family: "Special Elite", sans-serif;
+}
+
+.témoignages {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.clients {
+  background-color: #a96ba5;
+  border-radius: 1rem;
+  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56),
+    0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+  position: relative;
+  top: -3rem;
+  padding-bottom: 2rem;
+  text-align: center;
+  color: #f8f6f5;
+}
+
+.clients-carte {
+  background-color: #f8f6f5;
+  border-radius: 1rem;
+  padding: 1rem;
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+  margin-top: 10rem;
+  max-width: 30%;
+}
+
+.client {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 2rem;
+}
+
+.clients h4 {
+  font-family: "Galada", cursive;
+}
+
+.clients p {
+  font-family: "Special Elite", sans-serif;
+}
+
+/* photos des clients */
+
+.clients img {
+  max-width: 6rem;
+  border-radius: 50%;
+}
+
+/* media query pour la page index */
+@media screen and (max-width: 1200px) {
+  .presentation {
+    display: flex;
+    flex-flow: column wrap;
+  }
+
+  .txt-portes {
+    margin-bottom: 3rem;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .presentation {
+    display: flex;
+    flex-flow: column wrap;
+  }
+
+  .carte-txt-portes {
+    margin-bottom: 3rem;
+  }
+
+  .témoignages {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+  }
+
+  .clients-carte {
+    max-width: 40%;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .img-portes img {
+    max-width: 100%;
+  }
+
+  .title-menu,
+  .txt-témoignages {
+    max-width: 45%;
+    margin: 0 auto;
+  }
+
+  .clients-carte {
+    max-width: 66%;
+  }
+
+  .title-menu {
+    margin-top: 3rem;
+  }
+}
+
+/* css pour le form de reservation */
+.carte-form {
+  background-color: #a96ba5;
+  border-radius: 1rem;
+  padding: 1rem;
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56),
+    0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+  max-width: fit-content;
+}
+
+.background-form {
+  font-family: "Special Elite", sans-serif;
+
+  background-color: #f8f6f5;
+  border: none;
+  border-radius: 1rem;
+  margin: 0 auto;
+  position: relative;
+  top: -3rem;
+  margin-top: 10rem;
+  margin-bottom: 5rem;
+  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56),
+    0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+.form-flex {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  max-width: 100%;
+}
+
+.background-fieldset {
+  border: none;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-end;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.title {
+  color: #3b2959;
+  font-family: "Galada", cursive;
+  background-color: #f8f6f5;
+  padding: 1rem;
+  border-radius: 1rem;
+  max-width: fit-content;
+  text-align: center;
+  margin-top: 5rem;
+  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56),
+    0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+form h2,
+form h3 {
+  margin: 1rem auto;
+  color: #3b2959;
+  font-family: "Galada", cursive;
+}
+
+form p {
+  color: red;
+}
+
+form div {
+  margin-top: 1rem;
+  color: #3b2959;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  width: 100%;
+}
+
+.inputs {
+  box-shadow: inset 6px 6px 6px #3b2959, inset -6px -6px 6px white;
+  border: none;
+  border-radius: 1rem;
+  text-align: center;
+  width: 50%;
+  color: #3a0734;
+  font-size: large;
+  font-weight: bolder;
+}
+
+label {
+  width: 50%;
+}
+
+button {
+  text-align: center;
+}
+
+/*Media query pour la page reservation */
+@media screen and (max-width: 960px) {
+  .carte-form {
+    width: fit-content;
+    max-width: 85%;
+  }
+
+  .title {
+    margin: 0 auto;
+    margin-top: 3rem;
+  }
+}
+
+/* css pour la page restaurant */
+
+.restaurant h1 {
+  color: #3b2959;
+  font-family: "Galada", cursive;
+  background-color: #f8f6f5;
+  max-width: fit-content;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56),
+    0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+/* css pour la galerie photo */
+
+.galerie {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 5rem;
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+}
+
+.assiette1 {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.cocktail {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.terrasse {
+  grid-column: 3 / 5;
+  grid-row: 1 / 3;
+}
+
+.assiette2 {
+  grid-column: 1 / 3;
+  grid-row: 2 / 4;
+}
+
+.cocktail2 {
+  grid-column: 3 / 4;
+  grid-row: 3 / 4;
+}
+
+.assiette3 {
+  grid-column: 4 / 5;
+  grid-row: 3 / 4;
+}
+
+.galerie img {
+  max-width: 100%;
+  border-radius: 1rem;
+  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56),
+    0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+  position: relative;
+  top: -2rem;
+}
+
+.photo {
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: #a96ba5;
+  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56),
+    0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+}
+
+/* css pour adresse + carte */
+.white-background {
+  background-color: #f8f6f5;
+  padding: 2rem;
+}
+
+.coordonnees h3,
+.coordonnees h4,
+.coordonnees h5,
+.coordonnees p {
+  font-family: "Special Elite", sans-serif;
+  color: #3b2959;
+}
+
+.coordonnees a {
+  font-family: "Galada", cursive;
+  color: #a96ba5;
+  text-decoration: underline;
+}
+
+.coordonnees a:hover {
+  transform: scale(1, 2);
+  background-color: #a96ba5;
+  color: #f8f6f5;
+  padding: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 1rem;
+}
+
+.joindre {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+}
+
+/* media query width <1200px */
+@media screen and (max-width: 1200px) {
+  .galerie {
+    gap: 4rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+
+  .assiette1 {
+    grid-column: 2 / 4;
+    grid-row: 1 / 3;
+  }
+
+  .cocktail {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+
+  .terrasse {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+
+  .assiette2 {
+    grid-column: 1 / 3;
+    grid-row: 3 / 5;
+  }
+
+  .cocktail2 {
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
+  }
+
+  .assiette3 {
+    grid-column: 3 / 4;
+    grid-row: 4 / 5;
+  }
+
+  .galerie img {
+    top: -2rem;
+  }
+}
+
+
+/* media query width < 960pxpong */
+@media screen and (max-width: 960px) {
+  .galerie {
+    gap: 3rem;
+    grid-template-columns: 1fr 1fr;
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+
+  .assiette1 {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+  }
+
+  .cocktail {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+
+  .terrasse {
+    grid-column: 2 / 3;
+    grid-row: 4 / 5;
+  }
+
+  .assiette2 {
+    grid-column: 1 / 3;
+    grid-row: 3 / 4;
+  }
+
+  .cocktail2 {
+    grid-column: 1 / 2;
+    grid-row: 5 / 6;
+  }
+
+  .assiette3 {
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+  }
+
+  .galerie img {
+    top: -1rem;
+  }
+
+  .restaurant h1 {
+    margin: 0 auto;
+    margin-top: 2rem;
+  }
+
+  .joindre {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  iframe {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+
+
+/* css pour la page ma commande */
+
+h1.order {
+  color: #3b2959;
+  font-family: "Galada", cursive;
+  background-color: #f8f6f5;
+  max-width: fit-content;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-top: 3rem;
+  margin-bottom: 7rem;
+}
+
+.tableaux h2,
+.tableaux h3,
+.tableaux h4 {
+  font-size: 1.5rem;
+  color: #3b2959;
+  padding: 1rem;
+}
+
+/* css pour le tableau */
+
+.commande {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.tableaux {
+  background-color: #f8f6f5;
+  font-family: "Special Elite", sans-serif;
+  border-radius: 1rem;
+  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56),
+    0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  font-style: italic;
+  position: relative;
+  top: -3rem;
+}
+
+.carte-tableaux {
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: #a96ba5;
+  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56),
+    0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+  min-width: 45%;
+  margin-bottom: 5rem;
+}
+
+table {
+  width: 100%;
+  text-align: center;
+  color: #3b2959;
+}
+
+table tr th {
+  color: #3a0734;
+  width: 33%;
+}
+
+table th,
+table td {
+  line-height: 2rem;
+}
+
+.background-button {
+  width: 33%;
+}
+
+.details h5 {
+  font-size: 1.5rem;
+  color: #3b2959;
+  padding: 1rem;
+  margin: 0;
+}
+
+.details p {
+  font-weight: bold;
+}
+
+.details p.price {
+  color: #3b2959;
+  font-weight: normal;
+}
+
+.total {
+  border-top: solid 0.1rem #3b2959;
+}
+
+/* Media query pour la page ma commande */
+@media screen and (max-width: 960px) {
+  h1.order {
+    margin: 0 auto;
+    margin-top: 3rem;
+    margin-bottom: 7rem;
+  }
+}
+
+/* css page de confirmation */
+
+.confirmation {
+  background-color: #a96ba5;
+  border-radius: 1rem;
+  padding: 1rem;
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+  max-width: 66%;
+  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56),
+    0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+  margin-bottom: 15rem;
+  margin-top: 15rem;
+}
+
+.confirmation h1 {
+  background-color: #f8f6f5;
+  border-radius: 1rem;
+  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56),
+    0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  font-style: italic;
+  position: relative;
+  top: -1rem;
+  text-align: center;
+  color: #3b2959;
+}
